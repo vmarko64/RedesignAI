@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html, 
+  body, 
+  #root {
+    @apply bg-dark-900 w-full min-h-screen m-0 p-0;
+  }
+  
+  body {
+    @apply font-poppins text-gray-100 overflow-x-hidden bg-app text-dark-200;
+  }
+
+  #root {
+    @apply flex flex-col;
+  }
+
+  /* Style select dropdowns */
+  select {
+    @apply bg-dark-800 text-gray-100;
+  }
+
+  select option {
+    @apply bg-dark-800 text-gray-100;
+  }
+
+  /* Ensure all text inputs and textareas have white text */
+  input, textarea {
+    @apply text-gray-100 bg-dark-800;
+  }
+
+  /* Style placeholders */
+  ::placeholder {
+    @apply text-gray-500;
+  }
+}
+
+@layer utilities {
+  .full-bleed {
+    @apply w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw];
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-card backdrop-blur-md border border-dark-600/20 
+           rounded-xl shadow-inner overflow-hidden;
+  }
+  
+  .button-primary {
+    @apply px-4 py-2 bg-dark-700 hover:bg-dark-600 
+           text-dark-200 rounded-lg transition-colors duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2 bg-dark-800 border border-dark-600
+           text-dark-200 placeholder-dark-400 rounded-lg
+           focus:outline-none focus:border-dark-500
+           transition-colors duration-200;
+  }
+  
+  .section-title {
+    @apply text-2xl font-semibold text-gray-100 mb-6;
+  }
+
+  .glass-panel {
+    @apply bg-dark-800/95 backdrop-blur-md border border-dark-600/20 
+           rounded-xl shadow-inner;
+  }
+
+  /* Form labels and text */
+  .form-label {
+    @apply block text-sm font-medium text-gray-300 mb-2;
+  }
+
+  .text-muted {
+    @apply text-gray-400;
+  }
+
+  .text-body {
+    @apply text-gray-100;
+  }
+
+  /* Custom scrollbar for dark theme */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-500/30 rounded-full hover:bg-primary-500/50 transition-colors;
+  }
+} 
